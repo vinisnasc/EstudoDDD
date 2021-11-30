@@ -1,5 +1,6 @@
 ﻿using EstudoDDD.Domain.Entities;
 using EstudoDDD.Domain.Interfaces.Services.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
@@ -18,6 +19,7 @@ namespace EstudoDDD.API.Controllers
             _service = service;
         }
 
+        [Authorize("Bearer")]
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
@@ -51,6 +53,7 @@ namespace EstudoDDD.API.Controllers
             }
         }
 
+       // [Authorize("Bearer")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] UserEntity user)
         {
@@ -67,6 +70,45 @@ namespace EstudoDDD.API.Controllers
                     return BadRequest();
             }
             catch(ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [Authorize("Bearer")]
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UserEntity user)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var result = await _service.Put(user);
+                if (result != null)
+                    return Ok(result);
+
+                else
+                    return BadRequest();
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [Authorize("Bearer")]
+        [HttpDelete ("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                return Ok(await _service.Delete(id));
+            }
+            catch (ArgumentException ex)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }

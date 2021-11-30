@@ -5,13 +5,18 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudoDDD.API", "EstudoDDD.API\EstudoDDD.API.csproj", "{2036258D-93A7-49C7-BA75-EAFF01E8D876}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDDD.Domain", "EstudoDDD.Domain\EstudoDDD.Domain.csproj", "{1A1FF76B-2B1F-4AC1-B724-3D21C7787AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudoDDD.Domain", "EstudoDDD.Domain\EstudoDDD.Domain.csproj", "{1A1FF76B-2B1F-4AC1-B724-3D21C7787AE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDDD.CrossCutting", "EstudoDDD.CrossCutting\EstudoDDD.CrossCutting.csproj", "{239B2EC3-65D0-4508-A9B0-7F6631B51931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudoDDD.CrossCutting", "EstudoDDD.CrossCutting\EstudoDDD.CrossCutting.csproj", "{239B2EC3-65D0-4508-A9B0-7F6631B51931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDDD.Data", "EstudoDDD.Data\EstudoDDD.Data.csproj", "{CBB7EC2F-3E71-411B-AA6A-70B26CB8D280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudoDDD.Data", "EstudoDDD.Data\EstudoDDD.Data.csproj", "{CBB7EC2F-3E71-411B-AA6A-70B26CB8D280}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDDD.Service", "EstudoDDD.Service\EstudoDDD.Service.csproj", "{A5784B29-89EB-4667-9634-43C6B9508974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudoDDD.Service", "EstudoDDD.Service\EstudoDDD.Service.csproj", "{A5784B29-89EB-4667-9634-43C6B9508974}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{740A40F1-B26A-45A2-B794-7B0BF763362F}"
+	ProjectSection(SolutionItems) = preProject
+		JWT.txt = JWT.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

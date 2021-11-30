@@ -1,13 +1,10 @@
 ﻿using EstudoDDD.Data.Context;
+using EstudoDDD.Data.Implementations;
 using EstudoDDD.Data.Repository;
 using EstudoDDD.Domain.Interfaces;
+using EstudoDDD.Domain.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EstudoDDD.CrossCutting.DependencyInjection
 {
@@ -16,10 +13,11 @@ namespace EstudoDDD.CrossCutting.DependencyInjection
         public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+            serviceCollection.AddScoped<IUserRepository, UserImplementation>();
 
 
             serviceCollection.AddDbContext<MyContext>(options => options
-                    .UseSqlServer("Server = DESKTOP - R9JFMSC\\SQLEXPRESS; Database = EstudoDDD; Trusted_Connection = True; MultipleActiveResultSets = true"));
+                    .UseSqlServer("Integrated Security = SSPI;Persist Security Info=False;Initial Catalog=EstudoDDD;Data Source=DESKTOP-R9JFMSC\\SQLEXPRESS"));
 
         }
     }

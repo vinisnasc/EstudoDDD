@@ -1,0 +1,23 @@
+NuGet: 
+	Domain: System.IdentityModel.Tokens.Jwt
+	API:	Microsoft.AspNetCore.Authentication.JwtBearer
+
+Domain: criei o IUserRepository, que herda de IRepository<UserEntity>, nele, adicionei o metodo FindByLogin.
+
+Data: criei o UserImplementation, ele herda de BaseRepository<UserEntity> e de IUserRepository.
+
+Domain: fiz o ILoginService.
+
+Service: criei o LoginService, e implantei o FindByLogin
+
+API: Criei o LoginController
+
+CC: Adicionei a injeção de dependencia do LoginService e do UserRepository
+
+Domain: Criação do LoginDTO, TokenConfigurations e SigningConfigurations
+
+API: Inclui as TokenConfigurations no appsettings.json
+
+Service: arrumei o login service, incluindo e atualizando mais metodos
+
+API: ajustei a startup para gerar claims e Tokens
