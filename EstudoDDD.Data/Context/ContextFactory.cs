@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System;
 
 namespace EstudoDDD.Data.Context
 {
@@ -7,9 +8,8 @@ namespace EstudoDDD.Data.Context
     {
         public MyContext CreateDbContext(string[] args)
         {
-            var connectionString = "Integrated Security = SSPI;Persist Security Info=False;Initial Catalog=EstudoDDD;Data Source=DESKTOP-R9JFMSC\\SQLEXPRESS";
             DbContextOptionsBuilder<MyContext> optionBuilder = new();
-            optionBuilder.UseSqlServer(connectionString);
+            optionBuilder.UseSqlServer(Environment.GetEnvironmentVariable("SQL"));
             return new MyContext(optionBuilder.Options);
         }
     }

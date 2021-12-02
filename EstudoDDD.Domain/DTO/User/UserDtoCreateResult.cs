@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstudoDDD.Domain.DTO.User
 {
-    public class UserDto
+    public class UserDtoCreateResult
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

@@ -1,4 +1,6 @@
+using AutoMapper;
 using EstudoDDD.CrossCutting.DependencyInjection;
+using EstudoDDD.CrossCutting.Mappings;
 using EstudoDDD.Domain.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -24,13 +26,25 @@ namespace EstudoDDD.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+    
         public void ConfigureServices(IServiceCollection services)
         {
+            // Set informações do AppSettings
+            Environment.SetEnvironmentVariable("SQL", Configuration.GetConnectionString("SQL"));
+
             // Injeção de dependencia
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
 
+            AutoMapper.MapperConfiguration config = new(cfg =>
+            {
+                cfg.AddProfile(new DtoToModelProfile());
+                cfg.AddProfile(new EntityToDtoProfile());
+                cfg.AddProfile(new ModelToEntityProfile());
+            });
+
+            IMapper mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
 
             SigningConfigurations signingConfigurations = new();
             services.AddSingleton(signingConfigurations);

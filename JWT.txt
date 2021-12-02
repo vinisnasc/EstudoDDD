@@ -20,4 +20,11 @@ API: Inclui as TokenConfigurations no appsettings.json
 
 Service: arrumei o login service, incluindo e atualizando mais metodos
 
-API: ajustei a startup para gerar claims e Tokens
+API: ajustei a startup para gerar claims e Tokens, nos controllers, coloquei a dataanotation de protecao.
+
+
+AutoMapper
+NuGet:
+	CC: AutoMapper
+	Services: AutoMapper
+

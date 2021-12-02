@@ -1,4 +1,5 @@
-﻿using EstudoDDD.Domain.Entities;
+﻿using EstudoDDD.Domain.DTO.User;
+using EstudoDDD.Domain.Entities;
 using EstudoDDD.Domain.Interfaces.Services.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -53,9 +54,9 @@ namespace EstudoDDD.API.Controllers
             }
         }
 
-       // [Authorize("Bearer")]
+        [Authorize("Bearer")] 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] UserEntity user)
+        public async Task<IActionResult> Post([FromBody] UserDtoCreate user)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -77,7 +78,7 @@ namespace EstudoDDD.API.Controllers
 
         [Authorize("Bearer")]
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] UserEntity user)
+        public async Task<IActionResult> Put([FromBody] UserDtoUpdate user)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -86,7 +87,7 @@ namespace EstudoDDD.API.Controllers
             {
                 var result = await _service.Put(user);
                 if (result != null)
-                    return Ok(result);
+                    return Ok(result); 
 
                 else
                     return BadRequest();
