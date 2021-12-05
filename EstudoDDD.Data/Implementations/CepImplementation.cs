@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EstudoDDD.Data.Implementations
 {
-    class CepImplementation : BaseRepository<CepEntity>, ICepRepository
+    public class CepImplementation : BaseRepository<CepEntity>, ICepRepository
     {
         private DbSet<CepEntity> _dataset;
 

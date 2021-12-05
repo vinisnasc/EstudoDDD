@@ -13,7 +13,7 @@ namespace EstudoDDD.Domain.DTO.User
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Nome é um campo obrigatorio!")]
         [StringLength(60, ErrorMessage = "Nome deve ter no máximo {1} caracteres.")]
-        public string Nome { get; set; }
+        public string Name { get; set; }
         [Required(ErrorMessage = "Email é um campo obrigatorio!")]
         [EmailAddress(ErrorMessage = "Formato de e-mail inválido!")]
         [StringLength(100, ErrorMessage = "Nome deve ter no máximo {1} caracteres.")]

@@ -14,7 +14,7 @@ namespace EstudoDDD.Domain.Interfaces.Services.Municipio
         Task<MunicipioDtoCompleto> GetCompleteByIBGE(int codIBGE);
         Task<IEnumerable<MunicipioDto>> GetAll();
         Task<MunicipioDtoCreateResult> Post(MunicipioDtoCreate municipio);
-        Task<MunicipioDtoUpdateResult> Put(MunicipioDtoUpdateResult municipio);
+        Task<MunicipioDtoUpdateResult> Put(MunicipioDtoUpdate municipio);
         Task<bool> Delete(Guid id);
     }
 }
