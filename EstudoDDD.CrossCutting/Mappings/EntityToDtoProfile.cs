@@ -19,6 +19,7 @@ namespace EstudoDDD.CrossCutting.Mappings
             // User
             CreateMap<UserDtoCreate, UserEntity>().ReverseMap();
             CreateMap<UserDtoCreateResult, UserEntity>().ReverseMap();
+            CreateMap<UserDtoUpdateResult, UserEntity>().ReverseMap();
 
             // Uf
             CreateMap<UfDto, UfEntity>().ReverseMap();

@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		JWT.txt = JWT.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDDD.Data.Test", "EstudoDDD.Data.Test\EstudoDDD.Data.Test.csproj", "{85324AEF-87F4-4714-BC41-27EC119A1766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudoDDD.Data.Test", "EstudoDDD.Data.Test\EstudoDDD.Data.Test.csproj", "{85324AEF-87F4-4714-BC41-27EC119A1766}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

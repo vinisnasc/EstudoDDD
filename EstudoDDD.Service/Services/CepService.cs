@@ -51,7 +51,7 @@ namespace EstudoDDD.Service.Services
         public async Task<CepDtoUpdateResult> Put(CepDtoUpdate cep)
         {
             var model = _mapper.Map<CepModel>(cep);
-            var entity = _mapper.Map<CepEntity>(cep);
+            var entity = _mapper.Map<CepEntity>(model);
             var result = await _repository.UpdateAsync(entity);
             return _mapper.Map<CepDtoUpdateResult>(result);
         }

@@ -32,32 +32,26 @@ namespace EstudoDDD.Service.Services
             return _mapper.Map<UserDtoCreate>(entity); // TODO verificar esse metodo
         }
 
-        public async Task<IEnumerable<UserDtoCreate>> GetAll()
+        public async Task<IEnumerable<UserDtoCreateResult>> GetAll()
         {
             var listEntity = await _repository.SelectAsync();
-            return _mapper.Map<IEnumerable<UserDtoCreate>>(listEntity);
+            return _mapper.Map<IEnumerable<UserDtoCreateResult>>(listEntity);
         }
 
         public async Task<UserDtoCreateResult> Post(UserDtoCreate user)
         {
             var model = _mapper.Map<UserModel>(user);
-
             var entity = _mapper.Map<UserEntity>(model);
-
             var result = await _repository.InsertAsync(entity);
-
-            return _mapper.Map<UserDtoCreateResult>(entity);
+            return _mapper.Map<UserDtoCreateResult>(result);
         }
 
         public async Task <UserDtoUpdateResult> Put(UserDtoUpdate user)
         {
             var model = _mapper.Map<UserModel>(user);
-
             var entity = _mapper.Map<UserEntity>(model);
-
             var result = await _repository.UpdateAsync(entity);
-
-            return _mapper.Map<UserDtoUpdateResult>(entity);
+            return _mapper.Map<UserDtoUpdateResult>(result);
         }
     }
 }

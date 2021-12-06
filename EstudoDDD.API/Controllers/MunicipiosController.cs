@@ -42,7 +42,7 @@ namespace EstudoDDD.API.Controllers
         [Authorize("Bearer")]
         [HttpGet]
         [Route("{id}", Name = "GetMunicipioWithId")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<ActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -63,7 +63,7 @@ namespace EstudoDDD.API.Controllers
 
         [Authorize("Bearer")]
         [HttpGet]
-        [Route("{idMunicipio}")]
+        [Route("Complete/{id}", Name ="GetMunicipioCompleteById")]
         public async Task<IActionResult> GetCompleteById(Guid id)
         {
             if (!ModelState.IsValid)
@@ -85,7 +85,7 @@ namespace EstudoDDD.API.Controllers
 
         [Authorize("Bearer")]
         [HttpGet]
-        [Route("{ibgeMunicipio}")]
+        [Route("byIBGE/{ibge}", Name = "GetMunicipioCompleteByIBGE")]
         public async Task<IActionResult> GetCompleteByIBGE(int ibge)
         {
             if (!ModelState.IsValid)
