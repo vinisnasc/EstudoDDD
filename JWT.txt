@@ -28,3 +28,11 @@ NuGet:
 	CC: AutoMapper
 	Services: AutoMapper
 
+
+SendGrid:
+Criar as entitys SendGridEmailSenderOptions e Template data;
+Criar a interface IEmailSender;
+Criar a service SendGridEmailSender;
+Configurar a Startup;
+Ajustar configurações no AppSettings;
+Implementar metodos
